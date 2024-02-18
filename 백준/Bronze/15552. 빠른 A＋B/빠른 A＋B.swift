@@ -41,7 +41,9 @@ final class FileIO {
 
 let fio = FileIO()
 let n = fio.readInt()
+var result = ""
 for _ in 0..<n {
     let a = fio.readInt() + fio.readInt()
-    print(a)
+    result += "\(a)\n"
 }
+print(result)
