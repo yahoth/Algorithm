@@ -1,21 +1,15 @@
 import Foundation
-let n = Int(readLine()!)!
-var array = [Int]()
 
-for _ in 0..<n {
-    array.append(Int(readLine()!)!)
-}
+let n = Int(readLine()!)!
 var average = 0
 var median = 0
 var mode = 0
 var range = 0
 
-//평균값
-average = Int(round(Double(array.reduce(0, +)) / Double(array.count)))
 
 var totalRange = Array(repeating: 0, count: 8001) //range: 0~8000
-for i in array {
-    totalRange[i+4000] += 1
+for _ in 0..<n {
+    totalRange[Int(readLine()!)! + 4000] += 1
 }
 
 if let max = totalRange.max() {
@@ -31,6 +25,9 @@ for i in 0..<8001 {
         sortedArray.append(i-4000)
     }
 }
+
+//평균값
+average = Int(round(Double(sortedArray.reduce(0, +)) / Double(sortedArray.count)))
 
 // 중앙값
 median = sortedArray[sortedArray.count / 2]
