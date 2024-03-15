@@ -27,12 +27,12 @@ for i in 0..<8001 {
 }
 
 //평균값
-average = Int(round(Double(sortedArray.reduce(0, +)) / Double(sortedArray.count)))
+average = Int(round(Double(sortedArray.reduce(0, +)) / Double(n)))
 
 // 중앙값
-median = sortedArray[sortedArray.count / 2]
+median = sortedArray[n / 2]
 
 // 범위
-range = sortedArray.last! - sortedArray.first!
+range = sortedArray[n-1] - sortedArray[0]
 
 print("\(average)\n\(median)\n\(mode)\n\(range)")
